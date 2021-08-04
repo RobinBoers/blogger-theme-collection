@@ -27,7 +27,8 @@
         }
 
         .post pre code {
-            width: 600px;
+            /*width: 600px;*/
+            width: 100%;
             overflow-x: auto;
             font-family: monospace;
             padding: 12px;
@@ -91,7 +92,7 @@
 
         body { 
             color: #757575; 
-            font: 15px Roboto, sans-serif;
+            font: 17px Roboto, sans-serif;
             background-color: #eeeeee;
             min-height: 100vh;
         } 
