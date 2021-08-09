@@ -30,7 +30,7 @@
             /*width: 600px;*/
             width: 100%;
             overflow-x: auto;
-            font-family: monospace;
+            font-family: 'Cascadia Code','Droid Sans Mono', monospace;
             padding: 12px;
             border-radius: 5px;
             display: block;
