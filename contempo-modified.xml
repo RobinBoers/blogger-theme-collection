@@ -216,7 +216,7 @@
   <Variable name="sidebar.backgroundColorBottom"
       description="Background color (Bottom)"
       type="color"
-      default="#fff"  value="#ffffff"/>
+      default="#fff"  value="#f7f7f7"/>
   <Variable name="sidebar.separator.color"
       description="Separator color"
       type="color"
@@ -2704,7 +2704,17 @@ margin-left:40px
     margin-right: 2em !important;
     max-height: 128px !important;
     max-width: 128px !important;
-}
+}.post pre code {
+            /*width: 600px;*/
+            width: 70%;
+            overflow-x: auto;
+            font-family: 'Cascadia Code','Droid Sans Mono', monospace;
+            padding: 12px;
+            border-radius: 5px;
+            display: block;
+            background-color: #1b1c1d;
+            color: #adadad;
+        }
       ]]>
     </b:template-skin>
 
@@ -3055,7 +3065,7 @@ margin-left:40px
 
                 <div class='blog-name container'>
                   <b:section class='container' id='header' name='Header' showaddelement='false'>
-                    <b:widget id='Header1' locked='true' title='Webdevelopment-En-Meer (Kop)' type='Header' visible='true'>
+                    <b:widget id='Header1' locked='true' title='Webdevelopment-En-Meer (Kop)' type='Header' version='2' visible='true'>
                       <b:widget-settings>
                         <b:widget-setting name='displayUrl'/>
                         <b:widget-setting name='displayHeight'>0</b:widget-setting>
@@ -3071,6 +3081,7 @@ margin-left:40px
       <b:include cond='data:imagePlacement not in {&quot;REPLACE&quot;, &quot;BEFORE_DESCRIPTION&quot;}' name='title'/>
       <b:include cond='data:imagePlacement != &quot;REPLACE&quot;' name='description'/>
     </div>
+                        
     <b:include cond='data:imagePlacement == &quot;BEHIND&quot;' name='behindImageStyle'/>
   </b:includable>
                       <b:includable id='behindImageStyle'>
@@ -3103,44 +3114,15 @@ margin-left:40px
         </b:includable>
                     </b:widget>
                   </b:section>
-                  <b:if cond='data:view.isLayoutMode or data:widgets any (w =&gt; w.sectionId == &quot;subscription&quot;)'>
-                    <section class='subscribe-section-container'>
-                      <button class='subscribe-button pill-button'><b:eval expr='data:messages.subscribe'/></button>
-                      <div class='subscribe-popup-container'>
-                        <div aria-labelledby='subscribe-title' class='subscribe-popup dialog hidden' role='dialog' tabindex='-1'>
-                          <div role='document'>
-                            <h3 class='subscribe-title' id='subscribe-title'><b:eval expr='data:messages.subscribeToThisBlog'/></h3>
-                            <b:section id='subscription' name='Subscription' showaddelement='false'>
-                              <b:widget id='FollowByEmail1' locked='true' title='Volg me via email' type='FollowByEmail' visible='true'>
-                                <b:includable id='main'>
-  <b:include name='widget-title'/>
-  <b:include name='content'/>
-</b:includable>
-                                <b:includable id='content'>
-  <div class='widget-content'>
-    <div class='follow-by-email-inner'>
-      <form action='https://feedburner.google.com/fb/a/mailverify' expr:onsubmit='&quot;window.open(\&quot;https://feedburner.google.com/fb/a/mailverify?uri=&quot; + data:feedPath + &quot;\&quot;, \&quot;popupwindow\&quot;, \&quot;scrollbars=yes,width=550,height=520\&quot;); return true&quot;' method='post' target='popupwindow'>
-        <input autocomplete='off' class='follow-by-email-address' expr:placeholder='data:messages.emailAddress' name='email' type='email'/>
-        <input class='follow-by-email-submit' expr:value='data:messages.getEmailNotifications' type='submit'/>
-        <input expr:value='data:feedPath' name='uri' type='hidden'/>
-        <input name='loc' type='hidden' value='en_US'/>
-      </form>
-    </div>
-  </div>
-</b:includable>
-                              </b:widget>
-                            </b:section>
-                          </div>
-                        </div>
-                      </div>
+                  <section class='subscribe-section-container'>
+                      <button class='subscribe-button pill-button' onclick='window.location = &apos;https://follow.it/webdevelopment-en-meer?action=followPub&apos;'><b:eval expr='data:messages.subscribe'/></button>
                     </section>
-                  </b:if>
                   <b:comment>Nav primarily intended for sections that consist of major navigation blocks.</b:comment>
                   <nav role='navigation'>
                     <b:section class='clearboth' id='page_list_top' name='Page List (Top)' showaddelement='false'>
                       <b:widget cond='!data:view.isPost' id='PageList1' locked='true' title='' type='PageList' visible='true'>
                         <b:widget-settings>
-                          <b:widget-setting name='pageListJson'><![CDATA[{'home': {'href': 'https://webdevelopment-en-meer.blogspot.com/', 'title': 'Homepage', 'position': 0}, '9098950833866459076': {'href': 'https://webdevelopment-en-meer.blogspot.com/p/over-mij.html', 'title': 'Over mij', 'position': 1}, '2667141039898094175': {'href': 'https://webdevelopment-en-meer.blogspot.com/p/over-dit-blog.html', 'title': 'Over dit blog', 'position': 2}, 'link0': {'href': 'http://www.geheimesite.nl', 'title': 'geheimesite', 'position': 3}}]]></b:widget-setting>
+                          <b:widget-setting name='pageListJson'><![CDATA[{'home': {'href': 'https://webdevelopment-en-meer.blogspot.com/', 'title': 'Homepage', 'position': 0}, '9098950833866459076': {'href': 'https://webdevelopment-en-meer.blogspot.com/p/over-mij.html', 'title': 'Over mij', 'position': 1}, 'link0': {'href': 'http://www.geheimesite.nl', 'title': 'geheimesite', 'position': 2}}]]></b:widget-setting>
                           <b:widget-setting name='homeTitle'>Homepage</b:widget-setting>
                         </b:widget-settings>
                         <b:includable id='main'>
@@ -3530,13 +3512,14 @@ margin-left:40px
                       <b:widget-setting name='showShareButtons'>true</b:widget-setting>
                       <b:widget-setting name='authorLabel'>Door</b:widget-setting>
                       <b:widget-setting name='showCommentLink'>true</b:widget-setting>
-                      <b:widget-setting name='style.urlcolor'>#232323</b:widget-setting>
+                      <b:widget-setting name='style.urlcolor'>#444444</b:widget-setting>
                       <b:widget-setting name='showAuthor'>true</b:widget-setting>
                       <b:widget-setting name='disableGooglePlusShare'>true</b:widget-setting>
                       <b:widget-setting name='style.linkcolor'>#757575</b:widget-setting>
                       <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
                       <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
                       <b:widget-setting name='timestampLabel'>-</b:widget-setting>
+                      <b:widget-setting name='reactionsLabel'/>
                       <b:widget-setting name='showAuthorProfile'>true</b:widget-setting>
                       <b:widget-setting name='style.layout'>1x1</b:widget-setting>
                       <b:widget-setting name='showLabels'>true</b:widget-setting>
@@ -4148,6 +4131,9 @@ margin-left:40px
         <b:include data='post' name='threadedCommentForm'/>
       <b:else/>
         <data:post.noNewCommentsText/>
+      </b:if>
+      <b:if cond='data:post.showManageComments'>
+        <b:include data='post' name='manageComments'/>
       </b:if>
     </p>
 
