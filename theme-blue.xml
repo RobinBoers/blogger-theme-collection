@@ -729,11 +729,13 @@ head.appendChild(script);
                     </b:if>
                                   </div>
 
+                                  <!-- navigation -->
+                                  <b:if cond='data:view.isHomepage or data:view.search'>
+                                  	<b:include name='nextprev'/>
+                                  </b:if>
+                                  
                                   <!-- feed links -->
                                   <b:include name='feedLinks'/>
-
-                                  <!-- navigation -->
-                                  <b:include name='nextprev'/>
 
                                   <b:else/>
                                   <b:include name='mobile-main'/>
@@ -795,7 +797,8 @@ head.appendChild(script);
   <div class='comments' id='comments'>
     <a name='comments'/>
     <b:if cond='data:post.allowComments'>
-      <h4><data:post.commentLabelFull/>:</h4>
+      <h2>Reacties</h2>
+            <hr/>
 
       <b:if cond='data:post.commentPagingRequired'>
         <span class='paging-control-container'>
@@ -916,7 +919,9 @@ head.appendChild(script);
                               </b:includable>
                               <b:includable id='feedLinksBody' var='links'>
                                 <div class='feed-links'>
-                                  <span style='padding-right:5px;'>Volg me via RSS: </span>
+                                  <p>Wil je een berichtje ontvangen als ik een nieuw blog publiceer?<br/>
+                                    Stuur dan een mailtje naar <a href='mailto:sterrenkruid@gmail.com'>sterrenkruid@gmail.com</a>, dan zet ik je op de lijst.</p>
+                                  <span style='padding-right:5px;'>Of volg me via RSS: </span>
                                   <b:loop values='data:links' var='f'>
                                     <a class='feed-link' expr:href='data:f.url' expr:type='data:f.mimeType' target='_blank'>
                                       <svg id='Capa_1' style='enable-background:new 0 0 455.731 455.731;max-width:12px;' version='1.1' viewBox='0 0 455.731 455.731' x='0px' xml:space='preserve' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' y='0px'>
@@ -1612,7 +1617,8 @@ head.appendChild(script);
                               <b:includable id='threaded_comments' var='post'>
   <div class='comments' id='comments'>
     <a name='comments'/>
-    <h4><data:post.commentLabelFull/>:</h4>
+    <h2>Reacties</h2>
+    <hr/>
 
     <div class='comments-content'>
       <b:include cond='data:post.embedCommentForm' data='post' name='threaded_comment_js'/>
