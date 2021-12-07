@@ -63,9 +63,16 @@
                 margin: auto;
             }
         }
-        @media only screen and (min-width: 1000px) {
+        @media only screen and (min-width: 1300px) {
             body {
                 width: 50%;
+                margin: auto;
+            }
+        }
+
+        @media only screen and (min-width: 1600px) {
+            body {
+                width: 40%;
                 margin: auto;
             }
         }
@@ -129,6 +136,25 @@
 
         header.pageheader {
             text-align: center;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body, html, main {
+                background-color: #121212;
+                color: #eeeeee;
+            }
+            .post-title, h1,h2,h3,h4,h5,h6 {
+                color: white;
+            }
+            hr {
+                border-top-color: gray;
+            }
+            a {
+                color: royalblue;
+            }
+            .post pre code {
+                background-color: #151718;
+            }
         }
 	
   ]]></b:skin>
@@ -220,6 +246,9 @@
                         </b:if>
                     </div>
 
+                    <!-- navigation -->
+                    <b:include name='nextprev'/>
+
                     <!-- Feed links -->
                     <b:include name='feedLinks'/>
 
@@ -296,6 +325,69 @@
 
                         </footer>
                     </article>
+                </b:includable>
+                <b:includable id='nextprev'>
+                    <div class='blog-pager' id='blog-pager'>
+                        <b:if cond='data:newerPageUrl'>
+                        <span id='blog-pager-newer-link'>
+                            <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'>
+                            &#8592; Back
+                            </a>
+                        </span>
+                        </b:if>
+
+                        <b:if cond='data:olderPageUrl'>
+                        <span id='blog-pager-older-link'>
+                            <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:olderPageTitle'>
+                            Load more &#8594;
+                            </a>
+                        </span>
+                        </b:if>
+
+                        <a class='home-link' expr:href='data:blog.homepageUrl'>
+                        <data:homeMsg/>
+                        </a>
+
+                    </div>
+                    <div class='clear'/>
+                </b:includable>
+                <b:includable id='feedLinksBody' var='links'>
+                    <div class='feed-links'>
+                        <span style="padding-right:5px;">Follow via RSS: </span>
+                        <b:loop values='data:links' var='f'>
+                            <a class='feed-link' expr:href='data:f.url' expr:type='data:f.mimeType' target='_blank'>
+                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 455.731 455.731" style="enable-background:new 0 0 455.731 455.731;max-width:12px;" xml:space="preserve">
+                                    <g>
+                                        <rect x="0" y="0" style="fill:#F78422;" width="455.731" height="455.731" />
+                                        <g>
+                                            <path style="fill:#FFFFFF;" d="M296.208,159.16C234.445,97.397,152.266,63.382,64.81,63.382v64.348
+        c70.268,0,136.288,27.321,185.898,76.931c49.609,49.61,76.931,115.63,76.931,185.898h64.348
+        C391.986,303.103,357.971,220.923,296.208,159.16z" />
+                                            <path style="fill:#FFFFFF;" d="M64.143,172.273v64.348c84.881,0,153.938,69.056,153.938,153.939h64.348
+        C282.429,270.196,184.507,172.273,64.143,172.273z" />
+                                            <circle style="fill:#FFFFFF;" cx="109.833" cy="346.26" r="46.088" />
+                                        </g>
+                                    </g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                    <g></g>
+                                </svg>
+                                <data:f.name />
+                            </a>
+                        </b:loop>
+                    </div>
                 </b:includable>
             </b:widget>
         </b:section>
