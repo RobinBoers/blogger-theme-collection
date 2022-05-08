@@ -71,7 +71,7 @@
 		width:25%;float:left;
 	}
 	
-	.prph {width:100px;height:100px;border-radius:50%;border: 2px solid #049f91c9;}
+	.prph {width:100px;height:100px;border-radius:50%;border: 2px solid #049f91c9;object-fit:cover;}
 
 	.content-outer, .region-inner {
     	min-height: 0;
@@ -313,7 +313,7 @@ margin: auto;
       gapi.load(&quot;gapi.iframes:gapi.iframes.style.bubble&quot;, function() {
         if (gapi.iframes &amp;&amp; gapi.iframes.getContext) {
           gapi.iframes.getContext().openChild({
-              url: &#39;https://www.blogger.com/navbar.g?targetBlogID\x3d424867123600553545\x26blogName\x3dSterrenkruid\x26publishMode\x3dPUBLISH_MODE_BLOGSPOT\x26navbarType\x3dLIGHT\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttps://jokessterrenkruid.blogspot.com/search\x26blogLocale\x3dnl\x26v\x3d2\x26homepageUrl\x3dhttp://jokessterrenkruid.blogspot.com/\x26vt\x3d1024024734131510697&#39;,
+              url: &#39;https://www.blogger.com/navbar.g?targetBlogID\x3d424867123600553545\x26blogName\x3dSterrenkruid\x26publishMode\x3dPUBLISH_MODE_BLOGSPOT\x26navbarType\x3dLIGHT\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttps://jokessterrenkruid.blogspot.com/search\x26blogLocale\x3dnl\x26v\x3d2\x26homepageUrl\x3dhttps://jokessterrenkruid.blogspot.com/\x26vt\x3d-4935180864673053698&#39;,
               where: document.getElementById(&quot;navbar-iframe-container&quot;),
               id: &quot;navbar-iframe&quot;
           });
@@ -618,29 +618,28 @@ head.appendChild(script);
                           <b:section class='main' id='main' name='Main' showaddelement='no'>
                             <b:widget id='Blog1' locked='true' title='Blogposts' type='Blog' version='1'>
                               <b:widget-settings>
+                                <b:widget-setting name='showDateHeader'>false</b:widget-setting>
                                 <b:widget-setting name='commentLabel'>comments</b:widget-setting>
+                                <b:widget-setting name='style.textcolor'>#000000</b:widget-setting>
                                 <b:widget-setting name='showShareButtons'>true</b:widget-setting>
                                 <b:widget-setting name='authorLabel'>Door</b:widget-setting>
-                                <b:widget-setting name='disableGooglePlusShare'>true</b:widget-setting>
-                                <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
-                                <b:widget-setting name='timestampLabel'>-</b:widget-setting>
-                                <b:widget-setting name='reactionsLabel'/>
-                                <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
-                                <b:widget-setting name='style.layout'>1x1</b:widget-setting>
-                                <b:widget-setting name='showLocation'>false</b:widget-setting>
-                                <b:widget-setting name='showTimestamp'>true</b:widget-setting>
-                                <b:widget-setting name='postsPerAd'>1</b:widget-setting>
-                                <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
-                                <b:widget-setting name='showDateHeader'>false</b:widget-setting>
-                                <b:widget-setting name='style.textcolor'>#000000</b:widget-setting>
                                 <b:widget-setting name='showCommentLink'>true</b:widget-setting>
                                 <b:widget-setting name='style.urlcolor'>#008000</b:widget-setting>
                                 <b:widget-setting name='showAuthor'>true</b:widget-setting>
                                 <b:widget-setting name='style.linkcolor'>#0000ff</b:widget-setting>
+                                <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
                                 <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+                                <b:widget-setting name='timestampLabel'>-</b:widget-setting>
+                                <b:widget-setting name='reactionsLabel'/>
+                                <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
+                                <b:widget-setting name='style.layout'>1x1</b:widget-setting>
                                 <b:widget-setting name='showLabels'>true</b:widget-setting>
+                                <b:widget-setting name='showLocation'>false</b:widget-setting>
                                 <b:widget-setting name='postLabelsLabel'>labels</b:widget-setting>
+                                <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+                                <b:widget-setting name='postsPerAd'>1</b:widget-setting>
                                 <b:widget-setting name='showBacklinks'>false</b:widget-setting>
+                                <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
                                 <b:widget-setting name='showInlineAds'>false</b:widget-setting>
                                 <b:widget-setting name='showReactions'>false</b:widget-setting>
                               </b:widget-settings>
@@ -1799,7 +1798,7 @@ head.appendChild(script);
 <b:section-contents id='sidebar-right-1'>
   <b:widget id='HTML1' locked='false' title='' type='HTML' version='1'>
     <b:widget-settings>
-      <b:widget-setting name='content'>&lt;center&gt;&lt;img class=&quot;prph&quot; src=&quot;https://1.bp.blogspot.com/-tq_ozPKjOIc/YMXPbB4dZJI/AAAAAAAAHHM/LRrcZfs4cgskf5gkqKmPjuNrw40vNBPeQCK4BGAYYCw/s320/Foto.jpg&quot; /&gt;
+      <b:widget-setting name='content'>&lt;center&gt;&lt;img class=&quot;prph&quot; class=&quot;object-fit:cover;&quot; src=&quot;https://1.bp.blogspot.com/-xr1kW0JYj24/Yj84q1JY-rI/AAAAAAAAHq4/IM_r-X8LCagN2LivyFTgd0tMDe8haTOJACK4BGAYYCw/s113/profielfoto.jpg&quot; /&gt;
           &lt;br /&gt;&lt;br /&gt;
 &lt;h3&gt;Joke Visker (1950)&lt;/h3&gt;&lt;/center&gt;
 &lt;p&gt;De naam Sterrenkruid is lang geleden door mij bedacht. Ik wilde mijn belangstelling voor astrologie, kruiden en bijzondere plekken daarmee samenvatten. Op zoek naar verbinding kom ik ofwel terecht in de natuur, ofwel op plekken waar al vanouds de aarde resonantie werd gevoeld. Vooral de typologie en signatuur van kruiden en bomen spreken me aan. Kerken en oude cultusplaatsen staan standaard op mijn wensenlijstje. Omdat ik houd van plekken-met-een-verhaal reis ik met mijn man regelmatig door het land. &lt;/p&gt;</b:widget-setting>
